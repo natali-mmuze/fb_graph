@@ -2,6 +2,7 @@ module FbGraph
   module Connections
     module AdAccounts
       def ad_accounts(options = {})
+        puts('got here!!!!!!!')
         ad_accounts = self.connection :adaccounts, options
         ad_accounts.map! do |ad_account|
           AdAccount.new ad_account[:id], ad_account.merge(
