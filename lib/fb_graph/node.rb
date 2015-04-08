@@ -49,6 +49,7 @@ module FbGraph
       handle_response do
         http_client.get build_endpoint(params), build_params(params)
       end
+      puts('get')
     end
 
     def post(params = {})
@@ -91,6 +92,7 @@ module FbGraph
 
     def build_endpoint(params = {})
       _endpoint_ = URI.parse self.endpoint
+      puts('params build_endpoint:  ' + params)
       if api_version = params.delete(:api_version)
         _endpoint_.path = File.join('/', api_version, _endpoint_.path)
       end
